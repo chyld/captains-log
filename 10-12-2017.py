@@ -1,6 +1,3 @@
-import string
-
-
 def title_case(title, minor_words=''):
     sentence, minors = title.lower().split(' '), minor_words.lower().split(' ')
     return " ".join([word if (word in minors) and (i != 0) else word.title() for i, word in enumerate(sentence)])
@@ -14,6 +11,9 @@ def iq_test(numbers):
         eo[k][1] = i + 1
     e, o = eo[0][0], eo[1][0]
     return eo[0][1] if e == 1 else eo[1][1]
+
+
+import string
 
 
 def rot13(message):
