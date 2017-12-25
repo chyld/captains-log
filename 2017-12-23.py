@@ -46,3 +46,7 @@ from functools import reduce
 
 def nb_dig(n, d):
     return reduce(lambda count, n: count + str(n**2).count(str(d)), range(n + 1), 0)
+
+
+def square_sum(n):
+    return sum([i**2 for i in n])
