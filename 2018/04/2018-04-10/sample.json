@@ -1,0 +1,16 @@
+{
+    "dogs": [
+        {
+            "name": "fido",
+            "age": 3
+        },
+        {
+            "name": "molly",
+            "age": 5
+        },
+        {
+            "name": "lassy",
+            "age": 7
+        }
+    ]
+}
