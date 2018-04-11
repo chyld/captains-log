@@ -19,13 +19,15 @@
     </ul>
 
     <div>
-        <input id="cylinders" type="text" placeholder="cylinders" />
-        <input id="horsepower" type="text" placeholder="horsepower" />
-        <input id="weight" type="text" placeholder="weight" />
+        <input id="cylinders" type="number" placeholder="cylinders" value="8" />
+        <input id="horsepower" type="number" placeholder="horsepower" value="200" />
+        <input id="weight" type="number" placeholder="weight" value="2000" />
         <button id="inference">Inference</button>
+        <input id="mpg" type="text" readonly />
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/mpg.js"></script>
 </body>
 
 </html>

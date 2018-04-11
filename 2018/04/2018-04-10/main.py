@@ -62,5 +62,13 @@ def mpg():
     return render_template('mpg.html')
 
 
+@app.route('/inference', methods=['POST'])
+def inference():
+    req = request.get_json()
+    predictions = model.predict(
+        [[req['cylinders'], req['horsepower'], req['weight']]])
+    return jsonify(predictions[0])
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3333, debug=True)
