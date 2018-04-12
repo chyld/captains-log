@@ -3,8 +3,7 @@ import pickle
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
-
-model = pickle.load(open("gbr.p", "rb"))
+model = None
 
 
 @app.route('/', methods=['GET'])
@@ -64,11 +63,25 @@ def mpg():
 
 @app.route('/inference', methods=['POST'])
 def inference():
+    """
+    called from jquery
+    """
     req = request.get_json()
     predictions = model.predict(
         [[req['cylinders'], req['horsepower'], req['weight']]])
     return jsonify(predictions[0])
 
 
+@app.route('/reload', methods=['GET'])
+def reload():
+    """
+    called from model
+    """
+    global model
+    model = pickle.load(open("gbr.p", "rb"))
+    return 'OK'
+
+
+# model.feature_importances_
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3333, debug=True)
