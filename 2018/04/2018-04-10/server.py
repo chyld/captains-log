@@ -1,6 +1,7 @@
 import sys
 import pickle
-from flask import Flask, render_template, request, jsonify
+import pandas as pd
+from flask import Flask, render_template, request, jsonify, Response
 
 app = Flask(__name__)
 model = None
@@ -83,5 +84,18 @@ def reload():
     return 'OK'
 
 
+@app.route('/d3', methods=['GET'])
+def d3():
+    """
+    called from jquery
+    """
+    df = pd.read_csv('cars.csv')
+    # resp = Response(df.to_json())
+    # resp.headers['Content-Type'] = 'application/json'
+    # return resp
+    return jsonify(df.values.tolist())
+
+
 if __name__ == '__main__':
+    reload()
     app.run(host='0.0.0.0', port=3333, debug=True)

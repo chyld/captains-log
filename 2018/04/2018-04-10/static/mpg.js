@@ -15,4 +15,9 @@ $(document).ready(function () {
         });
         $('#mpg').val(response);
     });
+
+    setInterval(async function () {
+        const response = await $.ajax('/d3');
+    }, 1000);
+
 });
