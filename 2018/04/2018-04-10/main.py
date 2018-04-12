@@ -79,9 +79,9 @@ def reload():
     """
     global model
     model = pickle.load(open("gbr.p", "rb"))
+    print(model.feature_importances_)
     return 'OK'
 
 
-# model.feature_importances_
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3333, debug=True)
