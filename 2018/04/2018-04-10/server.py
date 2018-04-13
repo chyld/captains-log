@@ -90,10 +90,7 @@ def d3():
     called from jquery
     """
     df = pd.read_csv('cars.csv')
-    # resp = Response(df.to_json())
-    # resp.headers['Content-Type'] = 'application/json'
-    # return resp
-    return jsonify(df.values.tolist())
+    return jsonify({"mpg": df.mpg.values.tolist(), "weight": df.weight.values.tolist()})
 
 
 if __name__ == '__main__':
