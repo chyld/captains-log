@@ -4,7 +4,7 @@ import pickle
 import requests
 import json
 import time
-from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.linear_model import LinearRegression
 
 
 def fetch():
@@ -21,12 +21,10 @@ def write(data):
 
 
 def train():
-    # delete many ? rows
     df = pd.read_csv('cars.csv')
     y = df.mpg
-    X = df.drop(['mpg', 'car_name', 'origin', 'displacement',
-                 'acceleration', 'model'], axis=1)
-    model = GradientBoostingRegressor(n_estimators=1000)
+    X = df[['cylinders', 'horsepower', 'weight']]
+    model = LinearRegression()
     model.fit(X, y)
     pickle.dump(model, open("gbr.p", "wb"))
 

@@ -24,6 +24,16 @@ def version():
     return sys.version
 
 
+@app.route('/square', methods=['POST'])
+def square():
+    """
+    http -b POST :3333/square x:=7
+    """
+    req = request.get_json()
+    x = req['x']
+    return jsonify({'input': x, 'output': x**2})
+
+
 @app.route('/jdemo', methods=['POST'])
 def jdemo():
     """
@@ -80,7 +90,7 @@ def reload():
     """
     global model
     model = pickle.load(open("gbr.p", "rb"))
-    print(model.feature_importances_)
+    print(model.coef_)
     return 'OK'
 
 

@@ -26,13 +26,19 @@ $(document).ready(function () {
             return "hsl(" + Math.random() * 360 + ",100%,50%)";
         });
 
+        [svgWidth, svgHeight] = [700, 300];
+        const svg = d3.select('#graph')
+            .attr("width", svgWidth)
+            .attr("height", svgHeight);
+
+
         // d3 scatter plot
-        d3.select("#graph")
-            .selectAll('p')
-            .data([Math.random(), Math.random(), Math.random()])
-            .enter().append("p")
-            .text(function (d) {
-                return "I’m number " + d + "!";
-            });
+        // d3.select("#graph")
+        //     .selectAll('p')
+        //     .data([Math.random(), Math.random(), Math.random()])
+        //     .enter().append("p")
+        //     .text(function (d) {
+        //         return "I’m number " + d + "!";
+        //     });
     }, 1000);
 });
