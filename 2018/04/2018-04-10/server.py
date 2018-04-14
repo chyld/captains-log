@@ -100,7 +100,8 @@ def d3():
     called from jquery
     """
     df = pd.read_csv('cars.csv')
-    return jsonify({"mpg": df.mpg.values.tolist(), "weight": df.weight.values.tolist()})
+    data = list(zip(df.mpg.values.tolist(), df.weight.values.tolist()))
+    return jsonify({'data': data})
 
 
 if __name__ == '__main__':
