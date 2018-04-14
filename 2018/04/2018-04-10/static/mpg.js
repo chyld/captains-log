@@ -16,68 +16,68 @@ $(document).ready(function () {
         $('#mpg').val(response);
     });
 
-    setTimeout(async function () {
+    (async function plotter() {
         // fetch data
-        const response = await $.ajax('/d3');
-        data = response.data.map(a => ({
-            mpg: a[0],
-            weight: a[1]
-        }));
-        console.log(data);
+        const response = await $.ajax('/plotly');
+        mpg = response.data.map(a => a[0]);
+        weight = response.data.map(a => a[1]);
 
-        // d3 demo - show when data is being requestd
-        d3.selectAll("li").style("color", function () {
-            return "hsl(" + Math.random() * 360 + ",100%,50%)";
-        });
+        // PLOT 1 -------------------------------------------------------------------- //
+        // PLOT 1 -------------------------------------------------------------------- //
+        // PLOT 1 -------------------------------------------------------------------- //
+        // format data
+        const trace1 = [{
+            x: weight,
+            y: mpg,
+            mode: 'markers',
+            type: 'scatter'
+        }];
 
-        [svgWidth, svgHeight] = [725, 325];
-        const svg = d3.select('#graph')
-            .attr("width", svgWidth)
-            .attr("height", svgHeight);
+        // set layout
+        const layout1 = {
+            xaxis: {
+                title: 'Weight'
+            },
+            yaxis: {
+                title: 'MPG'
+            },
+            title: 'MPG by Weight',
+            autosize: false,
+            width: 700,
+            height: 300,
+            margin: {
+                l: 50,
+                b: 50,
+                r: 0,
+                t: 40,
+                pad: 5
+            }
+        };
 
-        const maxMpg = 50;
-        const [minWeight, maxWeight] = [1500, 4500];
-        // const scaleY = svgHeight / maxMpg;
-        // const scaleX = svgWidth / (maxWeight - minWeight);
+        // plot scatter plot
+        Plotly.plot($('#graph1')[0], trace1, layout1);
 
-        const circleGroup = svg.append('g')
-            .attr('fill', '#ffcc33')
-            .attr('stroke', '#005500')
-            .attr('stroke-width', '1px');
+        // PLOT 2 -------------------------------------------------------------------- //
+        // PLOT 2 -------------------------------------------------------------------- //
+        // PLOT 2 -------------------------------------------------------------------- //
 
-        // circleGroup.selectAll('circle')
-        //     .data(data)
-        //     .enter()
-        //     .append('circle')
-        //     .attr('cx', d => (d.weight - minWeight) * scaleX)
-        //     .attr('cy', d => svgHeight - (d.mpg * scaleY))
-        //     .attr('r', d => 5);
+        var trace2 = [{
+            x: mpg,
+            type: 'histogram',
+        }];
 
-        // -------------------------------------------------------------------------------- //
-        // -------------------------------------------------------------------------------- //
-        // -------------------------------------------------------------------------------- //
+        const layout2 = {
+            xaxis: {
+                title: 'MPG'
+            },
+            yaxis: {
+                title: 'Count'
+            },
+            title: 'MPG Histogram'
+        };
 
-        var xScale = d3.scaleLinear()
-            .domain([minWeight, maxWeight])
-            .range([25, svgWidth]);
-        var xAxis = d3.axisBottom()
-            .scale(xScale);
-        svg.append("g")
-            .attr("transform", "translate(0, " + (svgHeight - 25) + ")")
-            .call(xAxis);
+        // plot histogram
+        Plotly.plot($('#graph2')[0], trace2, layout2);
+    })();
 
-        var yScale = d3.scaleLinear()
-            .domain([0, maxMpg])
-            .range([0, svgHeight - 25]);
-        var yAxis = d3.axisLeft()
-            .scale(yScale);
-        svg.append("g")
-            .attr("transform", "translate(25, 0)")
-            .call(yAxis);
-
-        // -------------------------------------------------------------------------------- //
-        // -------------------------------------------------------------------------------- //
-        // -------------------------------------------------------------------------------- //
-
-    }, 1000);
 });

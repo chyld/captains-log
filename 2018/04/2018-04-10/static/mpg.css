@@ -7,9 +7,16 @@ body {
     width: 150px;
 }
 
-svg {
+#graph1 {
     width: 700px;
     height: 300px;
     border: 2px solid rgb(221, 31, 142);
+    margin: 50px;
+}
+
+#graph2 {
+    width: 700px;
+    height: 300px;
+    border: 2px solid rgb(116, 226, 102);
     margin: 50px;
 }
