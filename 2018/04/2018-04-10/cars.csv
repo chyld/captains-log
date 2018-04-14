@@ -8,3 +8,13 @@ mpg,cylinders,displacement,horsepower,weight,acceleration,model,origin,car_name
 14.0,8,454.0,220.0,4354.0,9.0,70,1,chevrolet impala
 14.0,8,440.0,215.0,4312.0,8.5,70,1,plymouth fury iii
 14.0,8,455.0,225.0,4425.0,10.0,70,1,pontiac catalina
+15.0,8,390.0,190.0,3850.0,8.5,70,1,amc ambassador dpl
+15.0,8,383.0,170.0,3563.0,10.0,70,1,dodge challenger se
+14.0,8,340.0,160.0,3609.0,8.0,70,1,plymouth 'cuda 340
+15.0,8,400.0,150.0,3761.0,9.5,70,1,chevrolet monte carlo
+14.0,8,455.0,225.0,3086.0,10.0,70,1,buick estate wagon (sw)
+24.0,4,113.0,95.00,2372.0,15.0,70,3,toyota corona mark ii
+22.0,6,198.0,95.00,2833.0,15.5,70,1,plymouth duster
+18.0,6,199.0,97.00,2774.0,15.5,70,1,amc hornet
+21.0,6,200.0,85.00,2587.0,16.0,70,1,ford maverick
+27.0,4,97.0,88.00,2130.0,14.5,70,3,datsun pl510

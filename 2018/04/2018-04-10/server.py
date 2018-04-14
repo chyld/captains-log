@@ -94,7 +94,7 @@ def reload():
     return 'OK'
 
 
-@app.route('/d3', methods=['GET'])
+@app.route('/plotly', methods=['GET'])
 def d3():
     """
     called from jquery
