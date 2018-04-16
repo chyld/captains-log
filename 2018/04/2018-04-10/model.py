@@ -26,7 +26,7 @@ def train():
     X = df[['cylinders', 'horsepower', 'weight']]
     model = LinearRegression()
     model.fit(X, y)
-    pickle.dump(model, open("gbr.p", "wb"))
+    pickle.dump(model, open("linreg.p", "wb"))
 
 
 def reload():

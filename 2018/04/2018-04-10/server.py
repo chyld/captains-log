@@ -89,7 +89,7 @@ def reload():
     called from model
     """
     global model
-    model = pickle.load(open("gbr.p", "rb"))
+    model = pickle.load(open("linreg.p", "rb"))
     print(model.coef_)
     return 'OK'
 
