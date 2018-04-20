@@ -62,3 +62,11 @@ def do_turn():
 
 def well(x):
     return {0: 'Fail!', 1: 'Publish!', 2: 'Publish!'}.get(x.count('good'), 'I smell a series!')
+
+
+def centuryFromYear(y):
+    return [1, 1, ((y-1)//100)+1, ((y-1)//100)+1][len(str(y))-1]
+
+
+def checkPalindrome(s):
+    return [s[:len(s)//2] == s[(len(s)//2):][::-1], s[:len(s)//2] == s[(len(s)//2)+1:][::-1]][len(s) & 1]
