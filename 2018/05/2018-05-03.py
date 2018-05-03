@@ -9,3 +9,17 @@ def year_days(y):
 
 def shorten_to_date(d):
     return d.split(',')[0]
+
+
+def period_is_late(last, today, cycle_length):
+    return (today - last).days > cycle_length
+
+
+def next_id(arr):
+    if not arr:
+        return 0
+    i = 0
+    for i, n in enumerate(arr):
+        if i not in arr:
+            return i
+    return i + 1
