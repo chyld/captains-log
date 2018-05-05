@@ -11,3 +11,4 @@
 - [Correlations with Pandas DataFrame](/2018/04/2018-04-17)
 - [DOM Manipulation with Vanilla JavaScript](/2018/04/2018-04-24)
 - [Keras, CNN, Visualizations](/2018/05/2018-05-02-keras.ipynb)
+- [React + Redux](2018/05/2018-05-05-react-redux)
