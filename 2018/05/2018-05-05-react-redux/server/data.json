@@ -1,0 +1,12 @@
+{
+  "animals": [
+    { "name": "fido", "age": 3 },
+    { "name": "alex", "age": 5 },
+    { "name": "page", "age": 7 }
+  ],
+  "robots": [
+    { "name": "ibm", "age": 33 },
+    { "name": "hal", "age": 54 },
+    { "name": "sam", "age": 77 }
+  ]
+}
