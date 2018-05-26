@@ -15,7 +15,7 @@ from functools import reduce
 
 
 def logical_calc(array, op):
-    """calculate and, or, xor from list of booleans
+    """calculate result of and, or, xor from list of booleans
 
     Arguments:
         array {list} -- list of boolean values
