@@ -29,3 +29,9 @@ def logical_calc(array, op):
             'OR': lambda a: sum(a) > 0,
             'XOR': lambda a: reduce(lambda t, b: bool(sum([t, b]) == 1), a)
             }[op](array)
+
+def add(a,b,c):
+    return a + b + c
+
+print(add(3,4,5))
+
