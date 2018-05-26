@@ -19,7 +19,7 @@ def logical_calc(array, op):
 
     Arguments:
         array {list} -- [description]
-        op {[type]} -- [description]
+        op {str} -- [description]
 
     Returns:
         [type] -- [description]
