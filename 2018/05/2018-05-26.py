@@ -18,7 +18,7 @@ def logical_calc(array, op):
     """calculate and, or, xor
 
     Arguments:
-        array {list} -- [description]
+        array {list} -- list of boolean values
         op {str} -- [description]
 
     Returns:
