@@ -15,7 +15,7 @@ from functools import reduce
 
 
 def logical_calc(array, op):
-    """[summary]
+    """calculate and, or, xor
 
     Arguments:
         array {[type]} -- [description]
