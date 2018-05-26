@@ -8,3 +8,15 @@ def two_sort(lst):
 for a in [1, 2, 3]:
     for z in [2, 3, 4]:
         print(a, z)
+
+
+def summ(x, y):
+    """hello
+
+    Arguments:
+        x {more} -- yo
+        y {ok} -- now
+    """
+
+
+import numpy as n
