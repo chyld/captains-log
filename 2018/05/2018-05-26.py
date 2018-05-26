@@ -22,7 +22,7 @@ def logical_calc(array, op):
         op {str} -- and, or, xor
 
     Returns:
-        bool -- result
+        bool -- result of operation
     """
 
     return {'AND': lambda a: sum(a) == len(a),
