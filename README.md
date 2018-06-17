@@ -13,3 +13,4 @@
 - [Keras, CNN, Visualizations](/2018/05/2018-05-02-keras.ipynb)
 - [React + Redux](2018/05/2018-05-05-react-redux)
 - [Gradient Descent](2018/05/2018-05-11-gradient-descent)
+- [Linear Regression California Housing Statsmodels](/2018/06/2018-06-17-linear-regression-ca-housing)
