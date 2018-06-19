@@ -1,12 +1,14 @@
 # captains-log
 
 ### Python Puzzles
+
 - Advent of Code
 - Exercism
 - Codewars
 - CodeFights
 
 ### Notable Code
+
 - [Linear Regression Predictions from Flask](/2018/04/2018-04-10)
 - [Correlations with Pandas DataFrame](/2018/04/2018-04-17)
 - [DOM Manipulation with Vanilla JavaScript](/2018/04/2018-04-24)
@@ -14,3 +16,4 @@
 - [React + Redux](2018/05/2018-05-05-react-redux)
 - [Gradient Descent](2018/05/2018-05-11-gradient-descent)
 - [Linear Regression California Housing Statsmodels](/2018/06/2018-06-17-linear-regression-ca-housing)
+- [Deep Learning Class Day 1](/2018/06/2018-06-19-deep-learning-class-day-1)
