@@ -16,4 +16,5 @@
 - [React + Redux](2018/05/2018-05-05-react-redux)
 - [Gradient Descent](2018/05/2018-05-11-gradient-descent)
 - [Linear Regression California Housing Statsmodels](/2018/06/2018-06-17-linear-regression-ca-housing)
-- [Deep Learning Class Day 1](/2018/06/2018-06-19-deep-learning-class-day-1)
+- [Deep Learning Class](/2018/06/2018-06-19-deep-learning-class)
+
