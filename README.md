@@ -19,3 +19,4 @@
 - [Deep Learning Class](/2018/06/2018-06-19-deep-learning-class)
 - [Log Loss / Cross Entropy / Sigmoid](/2018/07/05/logistic-regression.ipynb)
 - [Nonlinear Regression](/2018/07/15/2018-07-15-nonlinear-regression.ipynb)
+- [Birthday Problem, Correlation, Probability Distributions](/2018/07/28)
