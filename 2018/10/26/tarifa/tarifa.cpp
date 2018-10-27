@@ -3,12 +3,18 @@
 int main()
 {
     long counter = 0, X = 0, N = 0, sum = 0;
-    for (std::string line; std::getline(std::cin, line); counter++) {
-        if (counter == 0){
+    for (std::string line; std::getline(std::cin, line); counter++)
+    {
+        if (counter == 0)
+        {
             X = std::stol(line);
-        } else if (counter == 1){
+        }
+        else if (counter == 1)
+        {
             N = std::stol(line);
-        } else {
+        }
+        else
+        {
             sum += std::stol(line);
         }
     }
