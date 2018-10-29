@@ -6,4 +6,4 @@ RUN apt-get update && \
 COPY .bashrc /root
 
 # docker build -t cpp .
-# docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app cpp bash
+# docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app --cap-add=SYS_PTRACE --security-opt seccomp=unconfined cpp bash
