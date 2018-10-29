@@ -1,7 +1,7 @@
 PROG=fido
 CC=g++
-CPPFLAGS=-std=c++17 -Wall -pedantic -g
-LDFLAGS=
+CPPFLAGS=-std=c++17 -Wall -pedantic -g -O0
+LDFLAGS=-g -O0
 OBJS=main.o dog.o
 
 $(PROG) : $(OBJS)

@@ -3,7 +3,7 @@
 #include <string>
 #include "dog.h"
 
-int main()
+int main(int argc, char **argv)
 {
     std::string names[] = {"alpha", "beta", "gamma"};
     std::vector<fido::Dog> dogs;
