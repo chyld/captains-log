@@ -5,28 +5,17 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const numbers = [];
+let X, Y, N;
 
 rl.on("line", line => {
-  numbers.push(parseInt(line));
+  [X, Y, N] = line.split(" ").map(c => parseInt(c));
 });
 
 rl.on("close", () => {
-  const [L, D, X] = numbers;
-  const N = getValue(L, D + 1, +1, X);
-  const M = getValue(D, L - 1, -1, X);
-  console.log(N);
-  console.log(M);
-});
-
-function getValue(start, stop, step, value) {
-  for (let i = start; i !== stop; i += step) {
-    const v = String(i)
-      .split("")
-      .map(c => parseInt(c))
-      .reduce((a, n) => a + n);
-    if (v === value) {
-      return i;
-    }
+  for (let i = 1; i <= N; i++) {
+    if ((i % X) + (i % Y) === 0) console.log("FizzBuzz");
+    else if (i % X == 0) console.log("Fizz");
+    else if (i % Y == 0) console.log("Buzz");
+    else console.log(i);
   }
-}
+});
