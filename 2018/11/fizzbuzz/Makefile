@@ -1,14 +1,14 @@
-PROG=zamka
+PROG=fizzbuzz
 CC=g++
 CPPFLAGS=-std=c++17 -Wall -pedantic -g -O0
 LDFLAGS=-g -O0
-OBJS=zamka.o
+OBJS=fizzbuzz.o
 
 $(PROG) : $(OBJS)
 	$(CC) $(LDFLAGS) -o $(PROG) $(OBJS)
 
-zamka.o:
-	$(CC) $(CPPFLAGS) -c zamka.cc
+fizzbuzz.o:
+	$(CC) $(CPPFLAGS) -c fizzbuzz.cc
 
 clean:
 	rm -f $(PROG) $(OBJS)
