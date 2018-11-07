@@ -5,17 +5,31 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-let X, Y, N;
+const lines = [];
 
 rl.on("line", line => {
-  [X, Y, N] = line.split(" ").map(c => parseInt(c));
+  lines.push(line);
 });
 
 rl.on("close", () => {
-  for (let i = 1; i <= N; i++) {
-    if ((i % X) + (i % Y) === 0) console.log("FizzBuzz");
-    else if (i % X == 0) console.log("Fizz");
-    else if (i % Y == 0) console.log("Buzz");
-    else console.log(i);
+  const nums = lines[0]
+    .split(" ")
+    .map(n => parseInt(n))
+    .sort((a, b) => a - b);
+
+  const chars = lines[1].split("");
+  const lookup = {};
+  const results = [];
+
+  for (const i in nums) {
+    const num = nums[i];
+    const letter = String.fromCharCode(65 + i * 1);
+    lookup[letter] = num;
   }
+
+  for (const char of chars) {
+    results.push(lookup[char]);
+  }
+
+  console.log(results.join(" "));
 });
