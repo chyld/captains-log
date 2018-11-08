@@ -1,23 +1,34 @@
-// make clean; make fizzbuzz; cat samples/fizzbuzz-01.in | ./fizzbuzz
+// make clean; make abc; cat samples/1.in | ./abc
 
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <map>
+#include <iterator>
 #include <math.h>
 
 int main()
 {
-    int X, Y, N;
-    std::cin >> X >> Y >> N;
+    int x, y, z;
+    std::string s;
+    std::cin >> x >> y >> z >> s;
+    int size = 3;
+    int nums[] = {x, y, z};
 
-    for (int i = 1; i <= N; i++)
+    std::sort(nums, nums + size);
+    std::map<char, int> lookup;
+
+    for (int i = 0; i < size; i++)
     {
-        if ((i % X) + (i % Y) == 0)
-            std::cout << "FizzBuzz" << std::endl;
-        else if (i % X == 0)
-            std::cout << "Fizz" << std::endl;
-        else if (i % Y == 0)
-            std::cout << "Buzz" << std::endl;
-        else
-            std::cout << i << std::endl;
+        auto n = nums[i];
+        auto c = char(65 + i);
+        lookup.insert(std::pair<char, int>(c, n));
     }
+
+    for (char c : s)
+    {
+        std::cout << lookup[c] << " ";
+    }
+
+    std::cout << std::endl;
 }
