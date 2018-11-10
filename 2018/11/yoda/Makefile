@@ -1,14 +1,14 @@
-PROG=carrots
+PROG=yoda
 CC=g++
 CPPFLAGS=-std=c++17 -Wall -pedantic -g -O0
 LDFLAGS=-g -O0
-OBJS=carrots.o
+OBJS=yoda.o
 
 $(PROG) : $(OBJS)
 	$(CC) $(LDFLAGS) -o $(PROG) $(OBJS)
 
-carrots.o:
-	$(CC) $(CPPFLAGS) -c carrots.cc
+yoda.o:
+	$(CC) $(CPPFLAGS) -c yoda.cc
 
 clean:
 	rm -f $(PROG) $(OBJS)

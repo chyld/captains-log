@@ -1,4 +1,4 @@
-// make clean; make carrots; cat samples/carrots.02.in | ./carrots
+// make clean; make yoda; cat samples/yoda.1.in | ./yoda
 
 #include <iostream>
 #include <string>
@@ -9,7 +9,4 @@
 
 int main()
 {
-    int N, P;
-    std::cin >> N >> P;
-    std::cout << P << std::endl;
 }
