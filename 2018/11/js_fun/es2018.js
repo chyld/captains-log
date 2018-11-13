@@ -19,3 +19,31 @@ function add(a, b, c) {
 const e1 = add(...[1, 2, 3]);
 console.log("e1:", e1);
 // ------------------------------------------------------------- //
+
+// promise
+function rollDieAsync() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const roll = Math.floor(Math.random() * 6) + 1;
+      resolve(roll);
+    }, 100);
+  });
+}
+
+rollDieAsync().then(x => console.log("x:", x));
+
+// async generator
+async function* rollDiceAsync(n) {
+  for (let i = 0; i < n; i++) {
+    yield await rollDieAsync();
+  }
+}
+
+// async function
+async function main() {
+  for await (const roll of rollDiceAsync(3)) {
+    console.log("roll:", roll);
+  }
+}
+
+main();
