@@ -1,3 +1,5 @@
+/*eslint no-console: "off"*/
+
 const readline = require("readline");
 
 const rl = readline.createInterface({
@@ -13,12 +15,17 @@ rl.on("line", line => {
 });
 
 rl.on("close", () => {
-  const products = lines.slice(1).map(splitProduct);
-  const qaly = products.reduce((a, c) => a + c);
-  console.log(qaly.toFixed(3));
-});
+  const ranks = lines[0]
+    .trim()
+    .split(" ")
+    .map(hand => hand[0]);
 
-function splitProduct(line) {
-  const [q, y] = line.split(" ").map(c => parseFloat(c));
-  return q * y;
-}
+  const counter = new Map();
+
+  for (const rank of ranks) {
+    counter.set(rank, counter.has(rank) ? counter.get(rank) + 1 : 1);
+  }
+
+  const largest = Math.max(...counter.values());
+  console.log(largest);
+});
