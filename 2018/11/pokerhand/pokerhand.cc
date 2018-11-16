@@ -1,4 +1,4 @@
-// make clean; make qaly; cat samples/1.in | ./qaly
+// make clean; make pokerhand; cat samples/1.in | ./pokerhand
 
 #include <iostream>
 #include <iomanip>
@@ -9,24 +9,26 @@
 #include <vector>
 #include <sstream>
 #include <numeric>
+#include <utility>
 #include <math.h>
+
+bool compare(const std::pair<int, int> &a, const std::pair<int, int> &b)
+{
+    return a.second < b.second;
+}
 
 int main()
 {
-    int N;
-    std::cin >> N;
-    std::vector<float> products;
-
-    for (int i = 0; i < N; i++)
+    std::map<char, int> counter;
+    std::string card;
+    while (std::cin >> card)
     {
-        float q, y, product;
-        std::cin >> q >> y;
-        product = q * y;
-        products.push_back(product);
+        char rank = card[0];
+        int count = counter.count(rank) ? counter[rank] + 1 : 1;
+        counter[rank] = count;
     }
 
-    auto lambda = [&](float a, float b) { return a + b; };
-    auto qaly = std::accumulate(products.begin(), products.end(), 0.0, lambda);
-    std::cout << std::setprecision(3) << std::fixed;
-    std::cout << qaly << std::endl;
+    auto max_pair = std::max_element(counter.begin(), counter.end(), compare);
+    int largest = max_pair->second;
+    std::cout << largest << std::endl;
 }
