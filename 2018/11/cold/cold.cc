@@ -1,4 +1,4 @@
-// make clean; make pokerhand; cat samples/1.in | ./pokerhand
+// make clean; make cold; cat samples/cold-001.in | ./cold
 
 #include <iostream>
 #include <iomanip>
@@ -12,23 +12,19 @@
 #include <utility>
 #include <math.h>
 
-bool compare(const std::pair<int, int> &a, const std::pair<int, int> &b)
-{
-    return a.second < b.second;
-}
-
 int main()
 {
-    std::map<char, int> counter;
-    std::string card;
-    while (std::cin >> card)
+    int n;
+    std::cin >> n;
+    std::vector<int> nums;
+    for (int i = 0; i < n; i++)
     {
-        char rank = card[0];
-        int count = counter.count(rank) ? counter[rank] + 1 : 1;
-        counter[rank] = count;
+        int num;
+        std::cin >> num;
+        nums.push_back(num);
     }
 
-    auto max_pair = std::max_element(counter.begin(), counter.end(), compare);
-    int largest = max_pair->second;
-    std::cout << largest << std::endl;
+    auto lambda = [&](int total, int x) { return total + (int)(x < 0); };
+    int count = std::accumulate(nums.begin(), nums.end(), 0, lambda);
+    std::cout << count << std::endl;
 }
