@@ -15,17 +15,9 @@ rl.on("line", line => {
 });
 
 rl.on("close", () => {
-  const ranks = lines[0]
-    .trim()
+  const count = lines[1]
     .split(" ")
-    .map(hand => hand[0]);
-
-  const counter = new Map();
-
-  for (const rank of ranks) {
-    counter.set(rank, counter.has(rank) ? counter.get(rank) + 1 : 1);
-  }
-
-  const largest = Math.max(...counter.values());
-  console.log(largest);
+    .map(s => parseInt(s))
+    .reduce((total, n) => total + Number(n < 0), 0);
+  console.log(count);
 });
