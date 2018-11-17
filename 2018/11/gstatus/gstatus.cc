@@ -14,13 +14,8 @@
 
 int main()
 {
-    std::string line;
-    while (!std::getline(std::cin, line).eof())
-    {
-        if (line[0] == '*')
-        {
-            std::cout << line.substr(2) << std::endl;
-            break;
-        }
-    }
+    std::string data;
+    std::cin >> data;
+    std::string output = data.empty() ? "" : "*";
+    std::cout << output << std::endl;
 }
