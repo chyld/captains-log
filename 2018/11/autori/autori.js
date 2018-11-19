@@ -14,4 +14,10 @@ rl.on("line", line => {
   lines.push(line);
 });
 
-rl.on("close", () => {});
+rl.on("close", () => {
+  const output = lines[0]
+    .split("-")
+    .map(s => s[0])
+    .join("");
+  console.log(output);
+});
