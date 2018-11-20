@@ -16,6 +16,6 @@ int main()
 {
     std::string data;
     std::cin >> data;
-    std::string output = data.empty() ? "" : "*";
+    std::string output = data.empty() ? "" : " *";
     std::cout << output << std::endl;
 }
