@@ -14,4 +14,8 @@ rl.on("line", line => {
   lines.push(line);
 });
 
-rl.on("close", () => {});
+rl.on("close", () => {
+  const [a, mean] = lines[0].split(" ").map(s => parseInt(s));
+  const b = mean * 2 - a;
+  console.log(b);
+});
