@@ -1,6 +1,7 @@
 /*eslint no-console: "off"*/
 
 const readline = require("readline");
+const output = console.log.bind(console);
 
 const rl = readline.createInterface({
   input: process.stdin,
