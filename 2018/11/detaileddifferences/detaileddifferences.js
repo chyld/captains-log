@@ -21,4 +21,16 @@ rl.on("line", line => {
   lines.push(line);
 });
 
-rl.on("close", () => {});
+rl.on("close", () => {
+  lineIterator.next();
+
+  for (let a of lineIterator) {
+    let b = lineIterator.next().value;
+
+    a = [...a];
+    b = [...b];
+
+    const diff = a.map((ac, i) => (ac === b[i] ? "." : "*"));
+    output(a.join("") + "\n" + b.join("") + "\n" + diff.join("") + "\n");
+  }
+});
