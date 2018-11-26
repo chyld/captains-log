@@ -1,13 +1,7 @@
 /*eslint no-console: "off"*/
 
-function* lineGenerator() {
-  for (const line of lines) yield line;
-}
-
 const readline = require("readline");
 const output = console.log.bind(console);
-const range = size => Array.from({ length: size }, (v, i) => i);
-const lineIterator = lineGenerator();
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -21,4 +15,13 @@ rl.on("line", line => {
   lines.push(line);
 });
 
-rl.on("close", () => {});
+rl.on("close", () => {
+  const pieces = [1, 1, 2, 2, 2, 8];
+  const diff = lines[0]
+    .split(" ")
+    .map(s => parseInt(s))
+    .map((n, i) => pieces[i] - n)
+    .join(" ");
+
+  output(diff);
+});
