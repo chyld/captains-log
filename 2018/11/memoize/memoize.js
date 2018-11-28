@@ -1,24 +1,28 @@
 /*eslint no-console: "off"*/
 
-function* lineGenerator() {
-  for (const line of lines) yield line;
+console.log("hello");
+
+function memoize(fn) {
+  const table = {};
+
+  return arg => {
+    console.log("tb:", table);
+    const o = table[arg] || (table[arg] = fn(arg));
+    console.log("ta:", table);
+    return o;
+  };
 }
 
-const readline = require("readline");
-const output = console.log.bind(console);
-const range = size => Array.from({ length: size }, (v, i) => i);
-const lineIterator = lineGenerator();
+function factorial(n) {
+  if (n == 0) return 1;
+  return n * factorial(n - 1);
+}
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  terminal: false
+const ff1 = memoize(factorial);
+console.log(5, ff1(5));
+
+const ff2 = memoize(n => {
+  if (n == 0) return 1;
+  return n * ff2(n - 1);
 });
-
-const lines = [];
-
-rl.on("line", line => {
-  lines.push(line);
-});
-
-rl.on("close", () => {});
+console.log(5, ff2(5));
