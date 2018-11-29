@@ -1,13 +1,7 @@
 /*eslint no-console: "off"*/
 
-function* lineGenerator() {
-  for (const line of lines) yield line;
-}
-
 const readline = require("readline");
 const output = console.log.bind(console);
-const range = size => Array.from({ length: size }, (v, i) => i);
-const lineIterator = lineGenerator();
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -21,4 +15,16 @@ rl.on("line", line => {
   lines.push(line);
 });
 
-rl.on("close", () => {});
+rl.on("close", () => {
+  const map = lines[0].split(" ").reduce((map, word) => {
+    const val = map.has(word) ? map.get(word) + 1 : 1;
+    map.set(word, val);
+    return map;
+  }, new Map());
+
+  const sum = [...map.values()].reduce((a, b) => a + b);
+  const length = map.size;
+  const response = sum == length ? "yes" : "no";
+
+  output(response);
+});
