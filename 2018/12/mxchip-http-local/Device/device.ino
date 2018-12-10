@@ -3,6 +3,7 @@
 
 // is scoped to local file only
 static bool hasWifi = false;
+static int counter = 0;
 
 void setup()
 {
@@ -28,7 +29,8 @@ void setup()
 
 void loop()
 {
-  Serial.println("Sending HTTP Request");
+  counter += 1;
+  Serial.printf("Sending HTTP Request: %d \r\n", counter);
   HTTPClient *httpClient = new HTTPClient(HTTP_GET, "http://192.168.1.35:3000/");
   const Http_Response *result = httpClient->send();
 
@@ -43,5 +45,6 @@ void loop()
     Serial.println(httpClient->get_error());
   }
 
+  delete httpClient;
   delay(3000);
 }
