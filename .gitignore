@@ -3,4 +3,5 @@ kaggle/
 data/
 node_modules/
 .mypy_cache
+.build/
 
