@@ -1,5 +1,5 @@
 #include "AZ3166WiFi.h"
-#include "DevKitMQTTClient.h"
+#include "http_client.h"
 
 // is scoped to local file only
 static bool hasWifi = false;
@@ -28,4 +28,20 @@ void setup()
 
 void loop()
 {
+  Serial.println("Sending HTTP Request");
+  HTTPClient *httpClient = new HTTPClient(HTTP_GET, "http://192.168.1.35:3000/");
+  const Http_Response *result = httpClient->send();
+
+  if (result != NULL)
+  {
+    Serial.println("Request Body");
+    Serial.println(result->body);
+  }
+  else
+  {
+    Serial.println("HTTP Error");
+    Serial.println(httpClient->get_error());
+  }
+
+  delay(3000);
 }
