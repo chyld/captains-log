@@ -1,0 +1,67 @@
+[
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/cores/arduino"
+  },
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/variants/MXChip_AZ3166"
+  },
+  {
+    "Sourcefile": "/home/chyld/Code/captains-log/2018/12/mxchip-http-local/Device/.build/sketch/device.ino.cpp",
+    "Include": "AZ3166WiFi.h",
+    "Includepath": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/WiFi/src"
+  },
+  {
+    "Sourcefile": "/home/chyld/Code/captains-log/2018/12/mxchip-http-local/Device/.build/sketch/device.ino.cpp",
+    "Include": "DevKitMQTTClient.h",
+    "Includepath": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/AzureIoT/src"
+  },
+  {
+    "Sourcefile": "/home/chyld/Code/captains-log/2018/12/mxchip-http-local/Device/.build/sketch/device.ino.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/WiFi/src/AZ3166WiFi.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/WiFi/src/AZ3166WiFiClient.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/WiFi/src/AZ3166WiFiServer.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/WiFi/src/AZ3166WiFiUdp.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/AzureIoT/src/AzureIotHub.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/AzureIoT/src/DevKitMQTTClient.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/AzureIoT/src/DevKitOTAUtils.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "/home/chyld/.arduino15/packages/AZ3166/hardware/stm32f4/1.5.1/libraries/AzureIoT/src/DevkitDPSClient.cpp",
+    "Include": "",
+    "Includepath": ""
+  }
+]
