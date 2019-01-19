@@ -25,3 +25,11 @@ def test_prepend():
     assert sll.tail.nxt is None
     sll.prepend(1)
     assert str(sll) == "1 -> 2 -> 3"
+
+
+def test_append():
+    sll = SingleLinkedList()
+    sll.append(4)
+    sll.append(5)
+    sll.append(6)
+    assert str(sll) == "4 -> 5 -> 6"

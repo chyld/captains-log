@@ -27,3 +27,10 @@ class SingleLinkedList:
         if not node.nxt:
             return node.val
         return f"{node.val} -> {self.traverse(node.nxt)}"
+
+    def append(self, val):
+        if self.is_empty():
+            self.prepend(val)
+        else:
+            self.tail.nxt = Node(val)
+            self.tail = self.tail.nxt
