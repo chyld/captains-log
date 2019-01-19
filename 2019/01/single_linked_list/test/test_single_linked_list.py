@@ -33,3 +33,22 @@ def test_append():
     sll.append(5)
     sll.append(6)
     assert str(sll) == "4 -> 5 -> 6"
+
+
+def test_reverse():
+    sll = SingleLinkedList()
+    sll.append(4)
+    sll.append(5)
+    sll.append(6)
+    assert str(sll) == "4 -> 5 -> 6"
+    sll = sll.reverse()
+    assert str(sll) == "6 -> 5 -> 4"
+
+
+def test_len():
+    sll = SingleLinkedList()
+    sll.append(4)
+    assert len(sll) == 1
+    sll.append(5)
+    sll.append(6)
+    assert len(sll) == 3
