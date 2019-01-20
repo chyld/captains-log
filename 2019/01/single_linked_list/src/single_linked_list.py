@@ -23,12 +23,13 @@ class SingleLinkedList:
     def __str__(self):
         if self.is_empty():
             return ""
-        return self._traverse(self.head)
+        return SingleLinkedList._traverse(self.head)
 
-    def _traverse(self, node):
+    @staticmethod
+    def _traverse(node):
         if not node.nxt:
             return node.val
-        return f"{node.val} -> {self._traverse(node.nxt)}"
+        return f"{node.val} -> {SingleLinkedList._traverse(node.nxt)}"
 
     def append(self, val):
         self.size += 1
@@ -51,3 +52,16 @@ class SingleLinkedList:
                 sll.prepend(node.val)
                 node = node.nxt
         return sll
+
+    def find(self, val):
+        if not self.is_empty():
+            return SingleLinkedList._find(self.head, val)
+
+    @staticmethod
+    def _find(node, val):
+        if node.val == val:
+            return node
+        elif not node.nxt:
+            return None
+        else:
+            return SingleLinkedList._find(node.nxt, val)
