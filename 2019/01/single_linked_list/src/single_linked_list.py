@@ -28,7 +28,7 @@ class SingleLinkedList:
     @staticmethod
     def _traverse(node):
         if not node.nxt:
-            return node.val
+            return str(node.val)
         return f"{node.val} -> {SingleLinkedList._traverse(node.nxt)}"
 
     def append(self, val):
@@ -65,3 +65,24 @@ class SingleLinkedList:
             return None
         else:
             return SingleLinkedList._find(node.nxt, val)
+
+    def delete(self, val):
+        if self.is_empty():
+            return
+
+        if self.head.val == val:
+            self._delete_head()
+            return
+
+        node = self.head
+        while node.nxt:
+            prev = node
+            node = node.nxt
+            if node.val == val:
+                self._delete_body(prev)
+
+    def _delete_head(self):
+        self.head = self.head.nxt
+
+    def _delete_body(self, prev):
+        prev.nxt = prev.nxt.nxt

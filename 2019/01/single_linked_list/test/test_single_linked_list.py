@@ -51,3 +51,14 @@ def test_len(sll):
 def test_find(sll):
     assert sll.find(2) is None
     assert sll.find(3).val == 3
+
+
+def test_delete(sll):
+    sll.delete(2)
+    assert str(sll) == "3 -> 5 -> 7"
+    sll.delete(3)
+    assert str(sll) == "5 -> 7"
+    sll.delete(5)
+    assert str(sll) == "7"
+    sll.delete(7)
+    assert str(sll) == ""
