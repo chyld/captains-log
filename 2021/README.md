@@ -1,6 +1,6 @@
 - demo
 
-[code](https://www.example.com)
+[code](demo)
 
 
 [explanation](https://github.com/chyld/captains-log/discussions/3)
